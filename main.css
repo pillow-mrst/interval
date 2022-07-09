@@ -1,0 +1,90 @@
+#comment {
+    width: 600px;
+    margin: auto;
+}
+
+#comment .note{
+    color: red;
+    font-size: 10px;
+}
+
+#list {
+    width: 600px;
+    margin: auto;
+}
+
+#list img {
+    width: 70px;
+}
+
+.off{
+    filter: opacity(40%);
+}
+
+/*
+.under {
+    border-bottom: solid 2px red;
+}
+*/
+
+#tbd .hide {
+    display: none;
+}
+
+#table {
+    width: 500px;
+    margin: auto;
+}
+
+#unit_table {
+    margin: auto;
+}
+
+#unit_table th {
+    text-align: center;
+}
+
+#unit_table td {
+    text-align: center;
+}
+
+.column1 {
+    width: 130px;
+}
+
+.column2 {
+    width: 80px;
+}
+
+.column3 {
+    width: 50px;
+}
+
+.column4 {
+    width: 80px;
+}
+
+.column5 {
+    width: 80px;
+}
+
+.column6 {
+    width: 80px;
+}
+
+.quick {
+    width: 50px;
+}
+
+.guts {
+    width: 40px;
+}
+
+#memo {
+    width: 150px;
+    margin: auto;
+}
+
+#button {
+    text-align: center;
+}
