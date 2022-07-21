@@ -1,13 +1,13 @@
 // ユニット名と攻撃間隔[s]の配列
 const unit_interval = [
   // 星5
-  { name: "キクミコマチ", interval: "2.72", accuracy: "" },
-  { name: "アイオス", interval: "2.74", accuracy: "x" },
+  { name: "キクミコマチ", interval: "2.72", accuracy: "o" },
+  { name: "アイオス", interval: "2.74", accuracy: "" },
   { name: "モクレン", interval: "2.80", accuracy: "x" },
   { name: "ラッテ", interval: "2.76", accuracy: "o" },
   { name: "メモリニカ", interval: "2.78", accuracy: "o" },
   { name: "ラヴィエチル", interval: "2.59", accuracy: "" },
-  { name: "みくまり", interval: "2.44", accuracy: "" },
+  { name: "みくまり", interval: "2.44", accuracy: "o" },
   { name: "マギナアリス", interval: "2.55", accuracy: "" },
   { name: "テルジュア", interval: "2.85", accuracy: "" },
   { name: "パステーニャ", interval: "2.41", accuracy: "o" },
@@ -16,7 +16,7 @@ const unit_interval = [
   { name: "ファンタジア", interval: "2.62", accuracy: "" },
   { name: "クート", interval: "2.66", accuracy: "o" },
   { name: "ラハティア", interval: "2.29", accuracy: "" },
-  { name: "エレオノール", interval: "2.40", accuracy: "" },
+  { name: "エレオノール", interval: "2.40", accuracy: "?" },
   { name: "プレネア", interval: "2.24", accuracy: "o" },
   { name: "メイリーシャ", interval: "2.58", accuracy: "o" },
   { name: "ホワイトミル", interval: "2.22", accuracy: "o" },
