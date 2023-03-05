@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--CSS読み込み-->
   <!--onloadのところは変数なので、これでたぶん大丈夫-->
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
   <!--
     <link rel="stylesheet" href="/main.css">
   -->
   <link rel="stylesheet" href="https://pillow-mrst.github.io/interval/main.css">
-</head>
+  </head>
 <body>
   <div id="comment">
     <p class="note">
@@ -42,10 +42,13 @@
       <img id="402" class="off" src="https://github.com/pillow-mrst/interval/blob/main/unit/4-2.png?raw=true" alt="クート">
       <img id="403" class="off" src="https://github.com/pillow-mrst/interval/blob/main/unit/4-3.png?raw=true" alt="ラハティア">
       <img id="404" class="off" src="https://github.com/pillow-mrst/interval/blob/main/unit/4-4.png?raw=true" alt="エレオノール">
+    </div>
+    <div class="image">
       <img id="405" class="off" src="https://github.com/pillow-mrst/interval/blob/main/unit/4-5.png?raw=true" alt="プレネア">
       <img id="406" class="off" src="https://github.com/pillow-mrst/interval/blob/main/unit/4-6.png?raw=true" alt="メイリーシャ">
       <img id="407" class="off" src="https://github.com/pillow-mrst/interval/blob/main/unit/4-7.png?raw=true" alt="ホワイトミル">
-      <img id="408" class="off" src="https://github.com/pillow-mrst/interval/blob/main/unit/4-8.png?raw=true" alt="ファニー">
+      <img id="408" class="off" src="https://github.com/pillow-mrst/interval/blob/main/unit/4-8.png?raw=true" alt="ドリミーナ">
+      <img id="409" class="off" src="https://github.com/pillow-mrst/interval/blob/main/unit/4-9.png?raw=true" alt="ファニー">
     </div>
   </div>
   <br>
@@ -68,16 +71,17 @@
   <br>
   <div id="memo">
     <!-- そのうち作成データを文章化できるようにする -->
+    <textarea id="message" cols="30" rows="5" readonly></textarea>
     <div id="button">
-      <button id="make" disabled>発行</button>
+      <button id="output" disabled>出力</button>
       <button id="copy" disabled>コピー</button>
     </div>
   </div>
   <!--スクリプト読み込み(最初にjquery.min.js)-->
   <!--body内で使用する関数が記述されているjsならheadに記述する-->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="/libs/jquery.min.js"><\/script>')</script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
   <script>window.jQuery.ui || document.write('<script src="/libs/jquery-ui.min.js"><\/script>')</script>
   <!--
     <script type="text/javascript" src="/main.js"></script>
