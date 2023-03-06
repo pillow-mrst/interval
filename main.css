@@ -11,7 +11,7 @@
 
 #list {
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-left: 20px;
     margin-right: 20px;
     text-align: center;
@@ -38,23 +38,24 @@
 #table {
     width: 500px;
     margin: auto;
-    margin-bottom: 30px;
 }
 
 #unit_table {
-    margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+#unit_table th, #unit_table td{
+    text-align: center;
+    border: 1px solid;
 }
 
 #unit_table th {
-    text-align: center;
-}
-
-#unit_table td {
-    text-align: center;
+    background-color: lightskyblue;
 }
 
 .column1 {
-    width: 130px;
+    width: 110px;
 }
 
 .column2 {
@@ -70,11 +71,11 @@
 }
 
 .column5 {
-    width: 80px;
+    width: 70px;
 }
 
 .column6 {
-    width: 80px;
+    width: 70px;
 }
 
 .quick {
@@ -82,7 +83,11 @@
 }
 
 .guts {
-    width: 40px;
+    width: 30px;
+}
+
+#memo {
+    margin-top: 40px;
 }
 
 #textarea {

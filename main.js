@@ -1,26 +1,26 @@
 // ユニット名と攻撃間隔[s]の配列
 const unit_interval = [
   // 星5
-  { name: "キクミコマチ", interval: "2.72", accuracy: "o" },
-  { name: "アイオス", interval: "2.74", accuracy: "" },
-  { name: "モクレン", interval: "2.80", accuracy: "x" },
-  { name: "ラッテ", interval: "2.76", accuracy: "o" },
-  { name: "メモリニカ", interval: "2.78", accuracy: "o" },
-  { name: "ラヴィエチル", interval: "2.59", accuracy: "" },
-  { name: "みくまり", interval: "2.44", accuracy: "o" },
-  { name: "マギナアリス", interval: "2.55", accuracy: "" },
-  { name: "テルジュア", interval: "2.85", accuracy: "" },
-  { name: "パステーニャ", interval: "2.41", accuracy: "o" },
-  { name: "シアノ", interval: "2.60", accuracy: "" },
+  { name: "キクミコマチ", attribute: "炎", reach :"170", country: "和", interval: "2.72", accuracy: "o" },
+  { name: "アイオス", attribute: "水", reach :"185", country: "王国", interval: "2.74", accuracy: "?" },
+  { name: "モクレン", attribute: "風", reach :"155", country: "和", interval: "2.80", accuracy: "x" },
+  { name: "ラッテ", attribute: "光", reach :"190", country: "お菓子", interval: "2.76", accuracy: "o" },
+  { name: "メモリニカ", attribute: "闇", reach :"155", country: "死者", interval: "2.78", accuracy: "o" },
+  { name: "ラヴィエチル", attribute: "炎", reach :"135", country: "雪", interval: "2.59", accuracy: "" },
+  { name: "みくまり", attribute: "水", reach :"130", country: "和", interval: "2.44", accuracy: "o" },
+  { name: "マギナアリス", attribute: "炎", reach :"180", country: "空", interval: "2.55", accuracy: "" },
+  { name: "パステーニャ", attribute: "水", reach :"175", country: "砂漠", interval: "2.41", accuracy: "o" },
+  { name: "シアノ", attribute: "風", reach :"190", country: "植物", interval: "2.60", accuracy: "" },
   // 星4
-  { name: "ファンタジア", interval: "2.62", accuracy: "" },
-  { name: "クート", interval: "2.66", accuracy: "o" },
-  { name: "ラハティア", interval: "2.29", accuracy: "" },
-  { name: "エレオノール", interval: "2.40", accuracy: "?" },
-  { name: "プレネア", interval: "2.24", accuracy: "o" },
-  { name: "メイリーシャ", interval: "2.58", accuracy: "o" },
-  { name: "ホワイトミル", interval: "2.22", accuracy: "o" },
-  { name: "ファニー", interval: "2.10", accuracy: "" }
+  { name: "ファンタジア", attribute: "風", reach :"140", country: "エレキ", interval: "2.62", accuracy: "" },
+  { name: "クート", attribute: "光", reach :"150", country: "死者", interval: "2.66", accuracy: "o" },
+  { name: "ラハティア", attribute: "炎", reach :"165", country: "魔法", interval: "2.29", accuracy: "" },
+  { name: "エレオノール", attribute: "水", reach :"160", country: "死者", interval: "2.40", accuracy: "?" },
+  { name: "プレネア", attribute: "風", reach :"175", country: "植物", interval: "2.24", accuracy: "o" },
+  { name: "メイリーシャ", attribute: "風", reach :"160", country: "植物", interval: "2.58", accuracy: "o" },
+  { name: "ホワイトミル", attribute: "光", reach :"170", country: "お菓子", interval: "2.22", accuracy: "o" },
+  { name: "ドリミーナ", attribute: "光", reach :"180", country: "動物", interval: "2.64", accuracy: "" },
+  { name: "ファニー", attribute: "闇", reach :"165", country: "エレキ", interval: "2.10", accuracy: "" }
   // 星3
 ];
 
@@ -90,4 +90,29 @@ $('#list').on('click', 'img', function () {
 $('#tbd').on('change', '.reinforcement, .quick, .guts', function () {
   const $row_path = $(this).closest('tr');
   $row_path.find('.value').text(theoreticalValueCalc($row_path));
+});
+
+// 出力ボタン
+$('#output').on('click', function () {
+  const $display_path = $('#tbd > tr').not('.hide')
+  const row_length = $display_path.length
+  text = ''
+  for (let i = 0; i < row_length; i++) {
+    let $row_path =$display_path.eq(i)
+    text += $row_path.find('.name').text() + '/'
+    if ($row_path.find('.reinforcement').prop('checked')) {
+      text += '5%' + '/'
+    }
+    text += parseFloat($row_path.find('.quick').val()).toFixed(3) + '/'
+    text += 'guts' + $row_path.find('.guts').val() + '\n'
+  }
+  $('#message').text(text)
+  $('#copy').prop('disabled', false)
+});
+
+// コピーボタン
+$('#copy').on('click', function () {
+  $this_path = $(this)
+  $this_path.prop('disabled', true)
+  navigator.clipboard.writeText($('#message').text())
 });
