@@ -1,6 +1,7 @@
 #comment {
-    width: 600px;
+    width: 420px;
     margin: auto;
+    margin-top: 50px;
 }
 
 #comment .note{
@@ -9,8 +10,11 @@
 }
 
 #list {
-    width: 600px;
-    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
 }
 
 #list img {
@@ -21,9 +25,11 @@
     filter: opacity(40%);
 }
 
+/*
 .under {
     border-bottom: solid 2px red;
 }
+*/
 
 #tbd .hide {
     display: none;
@@ -32,6 +38,7 @@
 #table {
     width: 500px;
     margin: auto;
+    margin-bottom: 30px;
 }
 
 #unit_table {
@@ -78,9 +85,12 @@
     width: 40px;
 }
 
-#memo {
-    width: 150px;
-    margin: auto;
+#textarea {
+    text-align: center;
+}
+
+#message {
+    resize: none;
 }
 
 #button {
