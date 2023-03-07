@@ -34,16 +34,16 @@ const theoreticalValueCalc = function ($path) {
   return (parseFloat($path.find('.interval').text()) * (1 - parseFloat($path.find('.quick').val()) / 100 * (1 + (chk_status * 5 / 100))) * (1 - 0.04 * ($path.find('.guts').val() - 1))).toFixed(4);
 }
 
-// 画面サイズを縮小
-/*
+// 画面サイズを調整
 const screenScale = function () {
   // cssは画面サイズが取得できないため、こちらで制御
   const $window_width = $(window).width();
+  const $window_height = $(window).height();
+
   if ($window_width < BODY_WIDTH) {
-    $('body').css({transform: "scale($window_width / BODY_WIDTH)"});
+    $('body').css({'margin-height': (BODY_WIDTH / $window_width) * $window_height});
   }
 }
-*/
 
 /////////////// Jqueryのイベント ///////////////
 
@@ -82,15 +82,13 @@ $(window).on('load', function () {
   $('#tbd > tr').addClass('hide');
 
   // 端末に画面サイズを合わせる
-  //screenScale();
+  screenScale();
 });
 
-/*
 $(window).on('resize', function () {
   // 端末に画面サイズを合わせる
   screenScale();
 });
-*/
 
 // 画像をクリックしたら行の表示、非表示を切り替え
 $('#list').on('click', 'img', function () {
