@@ -25,6 +25,7 @@ const unit_interval = [
 ];
 
 const ON_MAX = 5;
+const BODY_WIDTH = 500
 
 // 理論値の計算
 const theoreticalValueCalc = function ($path) {
@@ -32,6 +33,17 @@ const theoreticalValueCalc = function ($path) {
   let chk_status = $path.find('.reinforcement').prop('checked') ? 1 : 0;
   return (parseFloat($path.find('.interval').text()) * (1 - parseFloat($path.find('.quick').val()) / 100 * (1 + (chk_status * 5 / 100))) * (1 - 0.04 * ($path.find('.guts').val() - 1))).toFixed(4);
 }
+
+// 画面サイズを縮小
+/*
+const screenScale = function () {
+  // cssは画面サイズが取得できないため、こちらで制御
+  const $window_width = $(window).width();
+  if ($window_width < BODY_WIDTH) {
+    $('body').css({transform: "scale($window_width / BODY_WIDTH)"});
+  }
+}
+*/
 
 /////////////// Jqueryのイベント ///////////////
 
@@ -68,7 +80,17 @@ $(window).on('load', function () {
   }
   // 行を非表示
   $('#tbd > tr').addClass('hide');
+
+  // 端末に画面サイズを合わせる
+  //screenScale();
 });
+
+/*
+$(window).on('resize', function () {
+  // 端末に画面サイズを合わせる
+  screenScale();
+});
+*/
 
 // 画像をクリックしたら行の表示、非表示を切り替え
 $('#list').on('click', 'img', function () {
@@ -94,29 +116,28 @@ $('#tbd').on('change', '.reinforcement, .quick, .guts', function () {
 
 // 出力ボタン押した時
 $('#memo').on('click', '#output', function () {
-  $this_path = $(this)
-  const $display_path = $('#tbd > tr').not('.hide')
-  const row_length = $display_path.length
-  text = ''
+  $this_path = $(this);
+  const $display_path = $('#tbd > tr').not('.hide');
+  const row_length = $display_path.length;
+  text = '';
   for (let i = 0; i < row_length; i++) {
-    let $row_path =$display_path.eq(i)
-    text += $row_path.find('.name').text() + '/'
+    let $row_path =$display_path.eq(i);
+    text += $row_path.find('.name').text() + '/';
     if ($row_path.find('.reinforcement').prop('checked')) {
-      text += '5%' + '/'
+      text += '5%' + '/';
     }
-    text += parseFloat($row_path.find('.quick').val()).toFixed(3) + '/'
-    text += 'guts' + $row_path.find('.guts').val() + '\n'
+    text += parseFloat($row_path.find('.quick').val()).toFixed(3) + '/';
+    text += 'guts' + $row_path.find('.guts').val() + '\n';
   }
-  $('#message').text(text)
-  $this_path.prop('disabled', true)
-  $('#copy').prop('disabled', false)
+  $('#message').text(text);
+  $('#copy').prop('disabled', false);
 });
 
 // コピーボタン押した時
 $('#memo').on('click', '#copy', function () {
-  $this_path = $(this)
-  navigator.clipboard.writeText($('#message').text())
-  alert('コピーしました！')
-  $('#output').prop('disabled', false)
-  $this_path.prop('disabled', true)
+  $this_path = $(this);
+  navigator.clipboard.writeText($('#message').text());
+  alert('コピーしました！');
+  $('#output').prop('disabled', false);
+  $this_path.prop('disabled', true);
 });
