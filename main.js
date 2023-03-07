@@ -92,8 +92,9 @@ $('#tbd').on('change', '.reinforcement, .quick, .guts', function () {
   $row_path.find('.value').text(theoreticalValueCalc($row_path));
 });
 
-// 出力ボタン
-$('#output').on('click', function () {
+// 出力ボタン押した時
+$('#memo').on('click', '#output', function () {
+  $this_path = $(this)
   const $display_path = $('#tbd > tr').not('.hide')
   const row_length = $display_path.length
   text = ''
@@ -107,12 +108,15 @@ $('#output').on('click', function () {
     text += 'guts' + $row_path.find('.guts').val() + '\n'
   }
   $('#message').text(text)
+  $this_path.prop('disabled', true)
   $('#copy').prop('disabled', false)
 });
 
-// コピーボタン
-$('#copy').on('click', function () {
+// コピーボタン押した時
+$('#memo').on('click', '#copy', function () {
   $this_path = $(this)
-  $this_path.prop('disabled', true)
   navigator.clipboard.writeText($('#message').text())
+  alert('コピーしました！')
+  $('#output').prop('disabled', false)
+  $this_path.prop('disabled', true)
 });

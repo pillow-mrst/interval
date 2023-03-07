@@ -1,12 +1,7 @@
-#comment {
-    width: 420px;
+body {
+    min-width: 470px;
+    margin: 0px;
     margin: auto;
-    margin-top: 50px;
-}
-
-#comment .note{
-    color: red;
-    font-size: 10px;
 }
 
 #list {
@@ -36,11 +31,12 @@
 }
 
 #table {
-    width: 500px;
-    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #unit_table {
+    margin: auto;
     border-collapse: collapse;
     border-spacing: 0px;
 }
@@ -100,4 +96,15 @@
 
 #button {
     text-align: center;
+}
+
+#comment {
+    width: 420px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+#comment .note{
+    color: red;
+    font-size: 10px;
 }
