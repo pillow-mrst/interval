@@ -106,12 +106,21 @@ $('#list').on('click', 'img', function () {
     $this_path.addClass('off');
     $table_path.eq(index).addClass('hide');
   }
+  // テーブルが存在すれば
+  if ($table_path.not('.hide').length) {
+    // 出力ボタンを有効化
+    $('#output').prop('disabled', false)
+  } else {
+    $('#output').prop('disabled', true)
+  }
 });
 
 // 変更があったら理論値を更新
 $('#tbd').on('change', '.reinforcement, .quick, .guts', function () {
   const $row_path = $(this).closest('tr');
   $row_path.find('.value').text(theoreticalValueCalc($row_path));
+  // 出力ボタンを有効化
+  $('#output').prop('disabled', false)
 });
 
 // 出力ボタン押した時
@@ -130,6 +139,9 @@ $('#memo').on('click', '#output', function () {
     text += 'guts' + $row_path.find('.guts').val() + '\n';
   }
   $('#message').text(text);
+
+  $this_path.prop('disabled', true)
+  // コピーボタンを有効化
   $('#copy').prop('disabled', false);
 });
 
@@ -138,6 +150,6 @@ $('#memo').on('click', '#copy', function () {
   $this_path = $(this);
   navigator.clipboard.writeText($('#message').text());
   alert('コピーしました！');
-  $('#output').prop('disabled', false);
-  $this_path.prop('disabled', true);
+
+  $('#output').prop('disabled', true);
 });
