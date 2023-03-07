@@ -108,3 +108,10 @@ body {
     color: red;
     font-size: 10px;
 }
+
+@media screen and (max-width: 480px) {
+    /* 480px以下に適用されるCSS(スマホ用) */
+    body {
+        transform: scale(1.0);
+    }
+}
