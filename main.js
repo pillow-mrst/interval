@@ -39,9 +39,13 @@ const screenScale = function () {
   // cssは画面サイズが取得できないため、こちらで制御
   const $window_width = $(window).width();
   const $window_height = $(window).height();
+  const $body_height = $('body').height();
+  const ideal_height = parseInt((BODY_WIDTH / $window_width) * $window_height);
 
+  //console.log($window_height)
+  //console.log(add_height)
   if ($window_width < BODY_WIDTH) {
-    $('body').css({'margin-height': (BODY_WIDTH / $window_width) * $window_height});
+    $('#comment').css({'margin-bottom': ideal_height - $body_height});
   }
 }
 
