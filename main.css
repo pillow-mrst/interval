@@ -139,10 +139,6 @@ body {
     }
 
     #comment {
-        width: 340px;
-    }
-
-    #comment .note {
-        font-size: 5px;
+        min-width: 340px;
     }
 }
