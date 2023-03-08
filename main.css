@@ -120,6 +120,10 @@ body {
         width: 60px;
     }
 
+    #unit_table {
+        font-size: 75%;
+    }
+
     #textarea {
         margin-bottom: 15px;
     }
