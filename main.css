@@ -109,10 +109,6 @@ body {
     font-size: 10px;
 }
 
-#space span {
-    margin: auto;
-}
-
 @media screen and (max-width: 500px) {
     /* 480px以下に適用されるCSS(スマホ用) */
     /* テーブルの都合で500pxを閾値に */
@@ -139,6 +135,8 @@ body {
     }
 
     #comment {
-        min-width: 340px;
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
