@@ -116,6 +116,10 @@ body {
         min-width: 340px;
     }
 
+    #list img {
+        width: 60px;
+    }
+
     #textarea {
         margin-bottom: 15px;
     }
@@ -136,7 +140,7 @@ body {
 
     #comment {
         width: auto;
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
     }
 }
