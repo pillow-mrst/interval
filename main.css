@@ -116,6 +116,10 @@ body {
 @media screen and (max-width: 500px) {
     /* 480px以下に適用されるCSS(スマホ用) */
     /* テーブルの都合で500pxを閾値に */
+    body {
+        min-width: 340px;
+    }
+
     #textarea {
         margin-bottom: 15px;
     }
@@ -132,6 +136,10 @@ body {
     #copy {
         margin-left: 7px;
         transform: scale(1.3);
+    }
+
+    #comment {
+        width: 340px;
     }
 
     #comment .note {

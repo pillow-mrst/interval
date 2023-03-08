@@ -25,7 +25,7 @@ const unit_interval = [
 ];
 
 const ON_MAX = 5;
-const BODY_WIDTH = 500
+const THRESHOLD = 500   // bodyのwidth(閾値)
 
 // 理論値の計算
 const theoreticalValueCalc = function ($path) {
@@ -39,14 +39,17 @@ const screenScale = function () {
   // cssは画面サイズが取得できないため、こちらで制御
   const $window_width = $(window).width();
   const $window_height = $(window).height();
+  const $body_width = $('body').width();
   const $body_height = $('body').height();
-  const ideal_height = parseInt((BODY_WIDTH / $window_width) * $window_height);
+  //const ideal_height = parseInt((THRESHOLD / $window_width) * $window_height);
 
   //console.log($window_height)
-  //console.log(add_height)
-  if ($window_width < BODY_WIDTH) {
-    $('#comment').css({'margin-bottom': ideal_height - $body_height});
+  //console.log(ideal_height)
+  /*
+  if ($window_width < THRESHOLD) {
+    $('body').css({'transform': scale($window_width / THRESHOLD)});
   }
+  */
 }
 
 /////////////// Jqueryのイベント ///////////////
@@ -86,13 +89,15 @@ $(window).on('load', function () {
   $('#tbd > tr').addClass('hide');
 
   // 端末に画面サイズを合わせる
-  screenScale();
+  //screenScale();
 });
 
+/*
 $(window).on('resize', function () {
   // 端末に画面サイズを合わせる
   screenScale();
 });
+*/
 
 // 画像をクリックしたら行の表示、非表示を切り替え
 $('#list').on('click', 'img', function () {
