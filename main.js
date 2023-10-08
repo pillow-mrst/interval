@@ -9,9 +9,12 @@ const unit_interval = [
   { name: "ラヴィエチル", attribute: "炎", reach :"135", country: "雪", interval: "2.59", accuracy: "" },
   { name: "みくまり", attribute: "水", reach :"130", country: "和", interval: "2.44", accuracy: "o" },
   { name: "マギナアリス", attribute: "炎", reach :"180", country: "空", interval: "2.55", accuracy: "" },
+  { name: "テルジュア", attribute: "炎", reach :"170", country: "死者", interval: "2.85", accuracy: "" },
   { name: "パステーニャ", attribute: "水", reach :"175", country: "砂漠", interval: "2.41", accuracy: "o" },
   { name: "シアノ", attribute: "風", reach :"190", country: "植物", interval: "2.60", accuracy: "" },
   // 星4
+  { name: "ウィルクム", attribute: "炎", reach :"140", country: "動物", interval: "2.32", accuracy: "" },
+  { name: "キマリス", attribute: "水", reach :"135", country: "西部", interval: "2.38", accuracy: "" },
   { name: "ファンタジア", attribute: "風", reach :"140", country: "エレキ", interval: "2.62", accuracy: "" },
   { name: "クート", attribute: "光", reach :"150", country: "死者", interval: "2.66", accuracy: "o" },
   { name: "ラハティア", attribute: "炎", reach :"165", country: "魔法", interval: "2.29", accuracy: "" },
@@ -20,8 +23,6 @@ const unit_interval = [
   { name: "メイリーシャ", attribute: "風", reach :"160", country: "植物", interval: "2.58", accuracy: "o" },
   { name: "ホワイトミル", attribute: "光", reach :"170", country: "お菓子", interval: "2.22", accuracy: "o" },
   { name: "ドリミーナ", attribute: "光", reach :"180", country: "動物", interval: "2.64", accuracy: "" },
-  { name: "ファニー", attribute: "闇", reach :"165", country: "エレキ", interval: "2.10", accuracy: "" }
-  // 星3
 ];
 
 const ON_MAX = 5;
